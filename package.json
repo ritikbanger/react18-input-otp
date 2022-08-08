@@ -1,6 +1,6 @@
 {
   "name": "react18-input-otp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A fully customizable, one-time password (OTP) and phone number with separator input component for the web built with React.",
   "main": "lib/index.js",
   "scripts": {

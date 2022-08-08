@@ -269,8 +269,8 @@ class OtpInput extends Component {
       this.focusNextInput();
     } else if (e.keyCode === SPACEBAR || e.key === ' ' || e.key === 'Spacebar' || e.key === 'Space') {
       e.preventDefault();
+      // eslint-disable-next-line no-empty
     } else if (e.keyCode === ENTER || e.which === ENTER || e.key === 'Enter') {
-      e.preventDefault();
     } else {
       this.changeCodeAtFocus('');
     }
@@ -340,7 +340,6 @@ class OtpInput extends Component {
       isInputSecure,
       className,
       inputProps,
-      onKeyDown: Function,
     } = this.props;
 
     const inputs = [];

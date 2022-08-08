@@ -44,7 +44,7 @@ interface OtpInputProps {
   placeholder?: string;
   separator?: Object;
   shouldAutoFocus?: boolean;
-  onKeyDown: Function;
+  onKeyDown?: Function;
   value?: string;
   'data-testid'?: string;
   'data-cy'?: string;

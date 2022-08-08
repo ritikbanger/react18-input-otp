@@ -221,7 +221,6 @@ class Demo extends Component {
                   shouldAutoFocus
                   value={otp}
                   placeholder={placeholder}
-                  onKeyDown={onKeyDown}
                 />
               </div>
               <div
