@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-import OtpInput from "../../lib";
-import "./styles.css";
+import OtpInput from '../../lib';
+import './styles.css';
 
 function ShowError(props) {
   return <p> {props.message} </p>;
@@ -13,18 +13,18 @@ class Demo extends Component {
     super(props);
 
     this.state = {
-      otp: "",
+      otp: '',
       numInputs: 4,
       separateAfter: 1,
-      separator: "-",
+      separator: '-',
       isDisabled: false,
       hasErrored: false,
       isInputNum: false,
       isInputSecure: false,
       minLength: 0,
       maxLength: 40,
-      placeholder: "",
-      errorMessage: "",
+      placeholder: '',
+      errorMessage: '',
     };
   }
 
@@ -46,18 +46,16 @@ class Demo extends Component {
         hasErrored: true,
         errorMessage: `Please enter a value between ${minLength} and ${maxLength}`,
       });
-      console.error(
-        `Please enter a value between ${minLength} and ${maxLength}`
-      );
+      console.error(`Please enter a value between ${minLength} and ${maxLength}`);
     } else {
-      this.setState({ hasErrored: false, errorMessage: "" });
+      this.setState({ hasErrored: false, errorMessage: '' });
     }
 
     this.setState({ [e.target.name]: parseInt(numInputs, 10) });
   };
 
   clearOtp = () => {
-    this.setState({ otp: "" });
+    this.setState({ otp: '' });
   };
 
   handleCheck = (e) => {
@@ -66,15 +64,14 @@ class Demo extends Component {
   };
 
   handleSubmit = (e) => {
-    e.preventDefault();
     if (!this.state.hasErrored && !this.state.errorMsg) {
       try {
         alert(this.state.otp);
-        this.setState({ hasErrored: false, errorMsg: "" });
+        this.setState({ hasErrored: false, errorMsg: '' });
       } catch (error) {
         this.setState({
           hasErrored: true,
-          errorMsg: "Error Occurred, Please try again.",
+          errorMsg: 'Error Occurred, Please try again.',
         });
       }
     }
@@ -94,16 +91,13 @@ class Demo extends Component {
       maxLength,
       placeholder,
       errorMessage,
+      onKeyDown,
     } = this.state;
 
     return (
       <div className="container">
         <div className="side-bar">
-          <a
-            href="https://github.com/ritikbanger/react18-input-otp"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/ritikbanger/react18-input-otp" target="_blank" rel="noreferrer">
             <div className="side-bar__segment side-bar__segment--header">
               <h2>react18-input-otp</h2>
             </div>
@@ -151,37 +145,18 @@ class Demo extends Component {
           <div className="side-bar__segment">
             <label htmlFor="value">
               value
-              <input
-                id="value"
-                maxLength={numInputs}
-                name="otp"
-                type="text"
-                value={otp}
-                onChange={this.handleChange}
-              />
+              <input id="value" maxLength={numInputs} name="otp" type="text" value={otp} onChange={this.handleChange} />
             </label>
           </div>
           <div className="side-bar__segment">
             <label htmlFor="placeholder">
               placeholder
-              <input
-                id="placeholder"
-                name="placeholder"
-                type="text"
-                value={placeholder}
-                onChange={this.handleChange}
-              />
+              <input id="placeholder" name="placeholder" type="text" value={placeholder} onChange={this.handleChange} />
             </label>
           </div>
           <div className="side-bar__segment">
             <label htmlFor="disabled">
-              <input
-                id="disabled"
-                name="isDisabled"
-                type="checkbox"
-                checked={isDisabled}
-                onChange={this.handleCheck}
-              />
+              <input id="disabled" name="isDisabled" type="checkbox" checked={isDisabled} onChange={this.handleCheck} />
               isDisabled
             </label>
           </div>
@@ -222,9 +197,7 @@ class Demo extends Component {
             </label>
           </div>
           <div className="side-bar__segment side-bar__segment--bottom">
-            <a href="https://github.com/ritikbanger/react18-input-otp">
-              Documentation and Source
-            </a>
+            <a href="https://github.com/ritikbanger/react18-input-otp">Documentation and Source</a>
           </div>
         </div>
         <div className="view">
@@ -248,43 +221,29 @@ class Demo extends Component {
                   shouldAutoFocus
                   value={otp}
                   placeholder={placeholder}
+                  onKeyDown={onKeyDown}
                 />
               </div>
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  color: "red",
+                  display: 'flex',
+                  justifyContent: 'center',
+                  color: 'red',
                 }}
               >
-                {hasErrored && errorMessage && (
-                  <ShowError message={errorMessage} />
-                )}
+                {hasErrored && errorMessage && <ShowError message={errorMessage} />}
               </div>
               <div className="btn-row">
-                {this.state.otp === "" ? (
-                  <button
-                    className="btn margin-top--large"
-                    type="button"
-                    disabled={isDisabled}
-                    onClick={this.clearOtp}
-                  >
+                {this.state.otp === '' ? (
+                  <button className="btn margin-top--large" type="button" disabled={isDisabled} onClick={this.clearOtp}>
                     Clear
                   </button>
                 ) : (
-                  <button
-                    className="btn margin-top--large"
-                    type="button"
-                    disabled
-                    onClick={this.clearOtp}
-                  >
+                  <button className="btn margin-top--large" type="button" disabled onClick={this.clearOtp}>
                     Clear
                   </button>
                 )}
-                <button
-                  className="btn margin-top--large"
-                  disabled={otp.length < numInputs}
-                >
+                <button className="btn margin-top--large" disabled={otp.length < numInputs} type="submit">
                   Get OTP
                 </button>
               </div>
@@ -296,4 +255,4 @@ class Demo extends Component {
   }
 }
 
-render(<Demo />, document.getElementById("app"));
+render(<Demo />, document.getElementById('app'));
