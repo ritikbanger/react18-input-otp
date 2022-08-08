@@ -89,6 +89,7 @@ class SingleOtpInput extends PureComponent {
       value,
       className,
       isInputSecure,
+      onSubmit,
       ...rest
     } = this.props;
 
@@ -131,6 +132,7 @@ class OtpInput extends Component {
     shouldAutoFocus: false,
     value: '',
     isInputSecure: false,
+    onSubmit: (otp) => console.log(otp),
   };
 
   state = {
@@ -265,8 +267,8 @@ class OtpInput extends Component {
       this.focusNextInput();
     } else if (e.keyCode === SPACEBAR || e.key === ' ' || e.key === 'Spacebar' || e.key === 'Space') {
       e.preventDefault();
-      // eslint-disable-next-line no-empty
     } else if (e.keyCode === ENTER || e.key === 'Enter') {
+      this.props.onSubmit();
     } else {
       this.changeCodeAtFocus('');
     }
@@ -336,6 +338,7 @@ class OtpInput extends Component {
       isInputSecure,
       className,
       inputProps,
+      onSubmit,
     } = this.props;
 
     const inputs = [];
@@ -401,6 +404,7 @@ class OtpInput extends Component {
           data-cy={dataCy && `${dataCy}-${i}`}
           data-testid={dataTestId && `${dataTestId}-${i}`}
           shouldRender={shouldRender}
+          onSubmit={onSubmit}
           {...currentInputProps}
           {...testAttr}
         />

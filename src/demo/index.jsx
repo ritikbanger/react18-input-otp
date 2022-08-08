@@ -221,6 +221,7 @@ class Demo extends Component {
                   shouldAutoFocus
                   value={otp}
                   placeholder={placeholder}
+                  onSubmit={() => console.log(otp)}
                 />
               </div>
               <div

@@ -7,6 +7,7 @@ declare class OtpInput extends React.Component<OtpInputProps, OtpInputState, any
     isDisabled: boolean;
     shouldAutoFocus: boolean;
     value: string;
+    onSubmit: Function;
   };
   constructor(props: Readonly<OtpInputProps>);
   constructor(props: OtpInputProps, context?: any);
@@ -44,6 +45,7 @@ interface OtpInputProps {
   placeholder?: string;
   separator?: Object;
   shouldAutoFocus?: boolean;
+  onSubmit?: Function;
   value?: string;
   'data-testid'?: string;
   'data-cy'?: string;
