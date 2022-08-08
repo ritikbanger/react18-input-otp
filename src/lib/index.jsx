@@ -89,7 +89,6 @@ class SingleOtpInput extends PureComponent {
       value,
       className,
       isInputSecure,
-      onKeyDown,
       ...rest
     } = this.props;
 
@@ -251,9 +250,6 @@ class OtpInput extends Component {
 
   // Handle cases of backspace, delete, left arrow, right arrow, space
   handleOnKeyDown = (e) => {
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(e);
-    }
     if (e.keyCode === BACKSPACE || e.key === 'Backspace') {
       e.preventDefault();
       this.changeCodeAtFocus('');
@@ -270,7 +266,7 @@ class OtpInput extends Component {
     } else if (e.keyCode === SPACEBAR || e.key === ' ' || e.key === 'Spacebar' || e.key === 'Space') {
       e.preventDefault();
       // eslint-disable-next-line no-empty
-    } else if (e.keyCode === ENTER || e.which === ENTER || e.key === 'Enter') {
+    } else if (e.keyCode === ENTER || e.key === 'Enter') {
     } else {
       this.changeCodeAtFocus('');
     }
