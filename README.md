@@ -6,11 +6,27 @@
 
 A fully customizable, one-time password (OTP) and phone number with separator input component for the web built with React.
 
-![see here](https://media.giphy.com/media/lN98dFU6h3oP0wWS5x/giphy.gif)
+![see here](https://github.com/ritikbanger/react18-input-otp/blob/main/src/demo/demo.gif)
 
 [Live Demo](https://ritikbanger.github.io/react18-input-otp)
 
-[CodeSandbox](https://codesandbox.io/s/react18-input-otp-demo-v2-1iy52)
+[CodeSandbox](https://codesandbox.io/s/react18-input-otp-0nxzx7?file=/src/App.js)
+
+## Features
+
+- A fully customisable OTP input package with support of React 18 and Typescript.
+- It works great on both react and ionic app. Works like a charm on mobile too.
+- You can specify only numeric inputs with inputNum prop.
+- Works perfectly with clipboard paste feature on web and mobile.
+- The only OTP input package on npm that supports 'enter' key to submit.
+- Supports onSubmit optional prop. You do not even need a button to submit.
+- You can use this package for phone number inputs too.
+- You can use this package for passcode fields too with inputSecure prop.
+- You can provide custom css as well as input props to the React18-input-otp.
+- 0 dependencies.
+- Minzipped size only 3.6 kb.
+- No open issues.
+- No security bugs.
 
 ## Installation
 
@@ -27,23 +43,16 @@ npm install --save react18-input-otp
 ##### As class component
 
 ```jsx
-import React, { Component } from "react";
-import OtpInput from "react18-input-otp";
+import React, { Component } from 'react';
+import OtpInput from 'react18-input-otp';
 
 export default class App extends Component {
-  state = { otp: "" };
+  state = { otp: '' };
 
   handleChange = (otp) => this.setState({ otp });
 
   render() {
-    return (
-      <OtpInput
-        value={this.state.otp}
-        onChange={this.handleChange}
-        numInputs={6}
-        separator={<span>-</span>}
-      />
-    );
+    return <OtpInput value={this.state.otp} onChange={this.handleChange} numInputs={6} separator={<span>-</span>} />;
   }
 }
 ```
@@ -51,21 +60,14 @@ export default class App extends Component {
 ##### As functional component with hooks
 
 ```jsx
-import React, { useState } from "react";
-import OtpInput from "react18-input-otp";
+import React, { useState } from 'react';
+import OtpInput from 'react18-input-otp';
 export default function ReactOtpInput() {
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState('');
   const handleChange = (enteredOtp) => {
     setOtp(enteredOtp);
   };
-  return (
-    <OtpInput
-      value={otp}
-      onChange={handleChange}
-      numInputs={6}
-      separator={<span>-</span>}
-    />
-  );
+  return <OtpInput value={otp} onChange={handleChange} numInputs={6} separator={<span>-</span>} />;
 }
 ```
 
@@ -78,6 +80,13 @@ export default function ReactOtpInput() {
     <th>Required</th>
     <th>Default</th>
     <th>Description</th>
+  </tr>
+   <tr>
+    <td>id</td>
+    <td>string</td>
+    <td>false</td>
+    <td>none</td>
+    <td>Provide unique id for your OTP input.</td>
   </tr>
   <tr>
     <td>numInputs</td>
@@ -92,6 +101,13 @@ export default function ReactOtpInput() {
     <td>true</td>
     <td>console.log</td>
     <td>Returns OTP code typed in inputs.</td>
+  </tr>
+   <tr>
+    <td>onSubmit</td>
+    <td>function</td>
+    <td>false</td>
+    <td>none</td>
+    <td>Returns OTP code on submit. This allows to submit the OTP on enter key too.</td>
   </tr>
   <tr>
     <td>value</td>
@@ -113,6 +129,27 @@ export default function ReactOtpInput() {
     <td>false</td>
     <td>none</td>
     <td>Provide a custom separator between inputs by passing a component. For instance, <code>&lt;span&gt;-&lt;/span&gt;</code> would add <code>-</code> between each input.</td>
+  </tr>
+  <tr>
+    <td>separateAfter</td>
+    <td>number<br/></td>
+    <td>false</td>
+    <td>1</td>
+    <td>Provide the count to set the separater after every input. For instance, <code>3</code> would add <code>-</code> after every third input.</td>
+  </tr>
+  <tr>
+    <td>autoComplete</td>
+    <td>string<br/></td>
+    <td>false</td>
+    <td>off</td>
+    <td>Provide the autocomplete feature for the input. Now, supports <code>one-time-code</code> as autoComplete.</td>
+  </tr>
+   <tr>
+    <td>ariaLabelOverride</td>
+    <td>string<br/></td>
+    <td>false</td>
+    <td>none</td>
+    <td>Provide the custom arialabel for the input.</td>
   </tr>
   <tr>
     <td>containerStyle</td>
@@ -197,6 +234,27 @@ export default function ReactOtpInput() {
     <td>false</td>
     <td>-</td>
     <td>Test attribute passed to the inputs.</td>
+  </tr>
+  <tr>
+    <td>custom-test-id</td>
+    <td>string</td>
+    <td>false</td>
+    <td>-</td>
+    <td>Custom test attribute passed to the inputs.</td>
+  </tr>
+  <tr>
+    <td>custom-test-attr</td>
+    <td>string</td>
+    <td>false</td>
+    <td>-</td>
+    <td>Custom test attribute passed to the inputs.</td>
+  </tr>
+   <tr>
+    <td>inputProps</td>
+    <td>InputHTMLAttributes | InputHTMLAttributes[]</td>
+    <td>false</td>
+    <td>-</td>
+    <td>Custom input props.</td>
   </tr>
 </table>
 

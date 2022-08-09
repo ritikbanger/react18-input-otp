@@ -328,7 +328,7 @@ class OtpInput extends Component {
       inputStyle,
       focusStyle,
       separator,
-      separateAfter,
+      separateAfter = 1,
       isDisabled,
       disabledStyle,
       hasErrored,
