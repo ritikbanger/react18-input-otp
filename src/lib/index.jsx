@@ -89,6 +89,7 @@ class SingleOtpInput extends PureComponent {
       value,
       className,
       isInputSecure,
+      numInputs,
       onSubmit,
       ...rest
     } = this.props;
@@ -112,7 +113,7 @@ class SingleOtpInput extends PureComponent {
             hasErrored && errorStyle
           )}
           type={this.getType()}
-          maxLength={this.props.numInputs ?? '1'}
+          maxLength={numInputs}
           ref={this.input}
           disabled={isDisabled}
           value={value ? value : ''}
