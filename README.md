@@ -4,7 +4,7 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-A fully customizable, one-time password (OTP) and phone number with separator input component for the web built with React.
+A fully customizable, one-time password (OTP) and phone number with separator input component for the web built with React. Tested on Web, Android, and iOS. This package supports all react versions.
 
 ![see here](https://github.com/ritikbanger/react18-input-otp/blob/main/src/demo/demo.gif)
 
@@ -19,6 +19,8 @@ A fully customizable, one-time password (OTP) and phone number with separator in
 - You can specify only numeric inputs with inputNum prop.
 - Works perfectly with clipboard paste feature on web and mobile.
 - The only OTP input package on npm that supports 'enter' key to submit.
+- Resolved OTP paste issues on Android.
+- Easy paste on iOS chrome, read from SMS feature.
 - Supports onSubmit optional prop. You do not even need a button to submit.
 - You can use this package for phone number inputs too.
 - You can use this package for passcode fields too with inputSecure prop.
