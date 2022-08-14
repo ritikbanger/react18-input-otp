@@ -19,7 +19,7 @@ A fully customizable, one-time password (OTP) and phone number with separator in
 - You can specify only numeric inputs with inputNum prop.
 - Works perfectly with clipboard paste feature on web and mobile.
 - The only OTP input package on npm that supports 'enter' key to submit.
-- Resolved OTP paste issues on Android.
+- Zero OTP paste issues on Android.
 - Easy paste on iOS chrome, read from SMS feature.
 - Supports onSubmit optional prop. You do not even need a button to submit.
 - You can use this package for phone number inputs too.
@@ -108,7 +108,7 @@ export default function ReactOtpInput() {
     <td>onSubmit</td>
     <td>function</td>
     <td>false</td>
-    <td>none</td>
+    <td>console.log</td>
     <td>Returns OTP code on submit. This allows to submit the OTP on enter key too.</td>
   </tr>
   <tr>
