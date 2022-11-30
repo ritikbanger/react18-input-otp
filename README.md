@@ -1,6 +1,6 @@
 # react18-input-otp
 
-[![npm version](https://badge.fury.io/js/react18-input-otp.svg)](https://badge.fury.io/js/react18-input-otp) [![npm](https://img.shields.io/npm/dw/react18-input-otp.svg?logo=npm)](https://www.npmjs.com/package/react18-input-otp) [![npm](https://img.shields.io/bundlephobia/minzip/react18-input-otp)](https://www.npmjs.com/package/react18-input-otp)
+[![npm version](https://badge.fury.io/js/react18-input-otp.svg)](https://badge.fury.io/js/react18-input-otp) [![npm](https://img.shields.io/npm/dm/react18-input-otp.svg?logo=npm)](https://www.npmjs.com/package/react18-input-otp) [![npm](https://img.shields.io/bundlephobia/minzip/react18-input-otp)](https://www.npmjs.com/package/react18-input-otp)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
