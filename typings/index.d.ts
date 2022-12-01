@@ -44,6 +44,7 @@ interface OtpInputProps {
   onChange: Function;
   placeholder?: string;
   separator?: Object;
+  separateAfter?: number;
   shouldAutoFocus?: boolean;
   onSubmit?: Function;
   value?: string;
