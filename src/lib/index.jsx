@@ -81,6 +81,8 @@ class SingleOtpInput extends PureComponent {
       isDisabled,
       hasErrored,
       errorStyle,
+      isSuccessed,
+      successStyle,
       focusStyle,
       disabledStyle,
       shouldAutoFocus,
@@ -102,14 +104,16 @@ class SingleOtpInput extends PureComponent {
             isStyleObject(inputStyle) && inputStyle,
             focus && isStyleObject(focusStyle) && focusStyle,
             isDisabled && isStyleObject(disabledStyle) && disabledStyle,
-            hasErrored && isStyleObject(errorStyle) && errorStyle
+            hasErrored && !isSuccessed && isStyleObject(errorStyle) && errorStyle,
+            isSuccessed && !hasErrored && isStyleObject(successStyle) && successStyle
           )}
           placeholder={placeholder}
           className={this.getClasses(
             inputStyle,
             focus && focusStyle,
             isDisabled && disabledStyle,
-            hasErrored && errorStyle
+            hasErrored && !isSuccessed && errorStyle,
+            isSuccessed && !hasErrored && successStyle
           )}
           type={this.getType()}
           ref={this.input}
@@ -344,6 +348,8 @@ class OtpInput extends Component {
       disabledStyle,
       hasErrored,
       errorStyle,
+      isSuccessed,
+      successStyle,
       shouldAutoFocus,
       isInputNum,
       isInputSecure,
@@ -408,6 +414,8 @@ class OtpInput extends Component {
           disabledStyle={disabledStyle}
           hasErrored={hasErrored}
           errorStyle={errorStyle}
+          isSuccessed={isSuccessed}
+          successStyle={successStyle}
           shouldAutoFocus={shouldAutoFocus}
           isInputNum={isInputNum}
           isInputSecure={isInputSecure}
