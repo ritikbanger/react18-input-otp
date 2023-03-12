@@ -203,6 +203,20 @@ export default function ReactOtpInput() {
     <td>Style applied or class passed to each input when errored.</td>
   </tr>
   <tr>
+    <td>isSuccessed</td>
+    <td>boolean</td>
+    <td>false</td>
+    <td>false</td>
+    <td>Indicates there is success with the inputs..</td>
+  </tr>
+  <tr>
+    <td>successStyle</td>
+    <td>style (object) / className (string)</td>
+    <td>false</td>
+    <td>none</td>
+    <td>Style applied or class passed to each input when success.</td>
+  </tr>
+  <tr>
     <td>shouldAutoFocus</td>
     <td>boolean</td>
     <td>false</td>

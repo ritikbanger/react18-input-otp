@@ -19,6 +19,7 @@ class Demo extends Component {
       separator: '-',
       isDisabled: false,
       hasErrored: false,
+      isSuccessed: false,
       isInputNum: false,
       isInputSecure: false,
       minLength: 0,
@@ -85,13 +86,13 @@ class Demo extends Component {
       separateAfter,
       isDisabled,
       hasErrored,
+      isSuccessed,
       isInputNum,
       isInputSecure,
       minLength,
       maxLength,
       placeholder,
       errorMessage,
-      onKeyDown,
     } = this.state;
 
     return (
@@ -173,6 +174,18 @@ class Demo extends Component {
             </label>
           </div>
           <div className="side-bar__segment">
+            <label htmlFor="isSuccessed">
+              <input
+                id="isSuccessed"
+                name="isSuccessed"
+                type="checkbox"
+                checked={isSuccessed}
+                onChange={this.handleCheck}
+              />
+              isSuccessed
+            </label>
+          </div>
+          <div className="side-bar__segment">
             <label htmlFor="isInputNum">
               <input
                 id="isInputNum"
@@ -214,6 +227,8 @@ class Demo extends Component {
                   separateAfter={separateAfter}
                   hasErrored={hasErrored}
                   errorStyle="error"
+                  isSuccessed={isSuccessed}
+                  successStyle="success"
                   onChange={this.handleOtpChange}
                   separator={<span>{separator}</span>}
                   isInputNum={isInputNum}
