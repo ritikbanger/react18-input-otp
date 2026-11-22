@@ -25,5 +25,22 @@
   "rules": {
     "no-unused-vars": "off",
     "react/prop-types": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**/*.{js,jsx}", "**/*.test.{js,jsx}"],
+      "env": {
+        "jest": true,
+        "node": true
+      },
+      "settings": {
+        "import/resolver": {
+          "node": {
+            "extensions": [".js", ".jsx"]
+          }
+        },
+        "import/ignore": ["node_modules"]
+      }
+    }
+  ]
 }

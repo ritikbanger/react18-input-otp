@@ -280,16 +280,23 @@ class OtpInput extends Component {
     let value = e.target.value;
     if (!e.target.value) return;
     if (e.target.value && e.target.value.length > 1) {
-      // this code happens when the users click the 'from your messages' code at the top of the keyboard
+      // this code happens when the users click the 'from your messages' code at the top of the keyboard,
+      // or when a password manager / browser autofill writes the whole code into one input.
       // essentially the mobile OS's act as though someone has pressed all of the OTP numbers all at once
       // rather than using a 'paste' style.
       e.preventDefault();
-      const { numInputs } = this.props;
-      const { activeInput } = this.state;
+      const { numInputs, isInputNum } = this.props;
+      // activeInput is -1 when no input is focused (e.g. some password managers fill without focusing)
+      const activeInput = Math.max(this.state.activeInput, 0);
       const otp = this.getOtpValue();
 
+      // Drop separators such as "-" or spaces (e.g. "123-456") for numeric inputs,
+      // the same way handleOnPaste does, so they don't take up a slot.
+      const filteredData = isInputNum ? e.target.value.replace(/\D/g, '') : e.target.value;
+      if (!filteredData) return;
+
       // Get pastedData in an array of max size (num of inputs - current position)
-      const pastedData = e.target.value.slice(0, numInputs - activeInput).split('');
+      const pastedData = filteredData.slice(0, numInputs - activeInput).split('');
       // Paste data from focused input onwards
       for (let pos = 0; pos < numInputs; ++pos) {
         if (pos >= activeInput && pastedData.length > 0) {
